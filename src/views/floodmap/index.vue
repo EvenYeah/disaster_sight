@@ -5,13 +5,13 @@
         <!-- 地图部分 -->
         <h2>洪灾地图</h2>
         <div class="map-container">
-          <MapView />
+          <mmap></mmap>
         </div>
       </el-col>
       <el-col :span="8">
         <!-- 洪灾信息部分 -->
         <div class="flood-info">
-          <h2>洪灾信息</h2>
+          <h2>实时新闻</h2>
           <ul>
             <li v-for="(info, index) in floodInfo" :key="index">
               {{ info }}
@@ -24,23 +24,24 @@
 </template>
 
 <script>
-import MapView from './components/MapView.vue'
+import mmap from './components/map.vue'
 
 export default {
   name: 'FloodMapPage',
   components: {
-    MapView
+    mmap
   },
   data() {
     return {
-      floodInfo: [
+
+    /*  floodInfo: [
         '洪灾区域1 - 严重程度: 高',
         '洪灾区域2 - 严重程度: 中',
         '洪灾区域3 - 严重程度: 低',
         '洪灾区域4 - 严重程度: 高',
         '洪灾区域5 - 严重程度: 中',
         '洪灾区域6 - 严重程度: 低'
-      ]
+      ]*/
     }
   }
 }

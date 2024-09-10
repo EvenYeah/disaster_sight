@@ -67,6 +67,7 @@
         <el-button class="thirdparty-button" type="primary" @click="showDialog=true">
           {{ $t('login.thirdparty') }}
         </el-button>
+         <el-button class="register-button" type="text" @click="goToRegister">还没有账号？点击注册</el-button>
       </div>
     </el-form>
 
@@ -149,6 +150,10 @@ export default {
     checkCapslock(e) {
       const { key } = e
       this.capsTooltip = key && key.length === 1 && (key >= 'A' && key <= 'Z')
+    },
+    goToRegister() {
+      console.log("used")
+      this.$router.push('/register'); // 跳转到注册页面
     },
     showPwd() {
       if (this.passwordType === 'password') {
